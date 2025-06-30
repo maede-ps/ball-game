@@ -9,6 +9,9 @@ public class DragKick : MonoBehaviour
     private Vector2 endDragPos;
     private Rigidbody2D rb;
 
+    public int Coin_Count;
+
+    public float Play_Life_Time;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +21,8 @@ public class DragKick : MonoBehaviour
 
     private void Update()
     {
+        Play_Life_Time += Time.deltaTime;
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -60,9 +65,16 @@ public class DragKick : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
+
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Item ite = collision.collider.gameObject.GetComponent<Item>();
+    //    if (ite != null)
+    //    {
+    //        UnityEngine.Debug.Log(collision.collider.name);
+    //    }
+    //}
+
 
 }
