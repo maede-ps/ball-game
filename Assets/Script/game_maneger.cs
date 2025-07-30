@@ -43,7 +43,7 @@ public class game_maneger : MonoBehaviour
     {
         score += amount * scoreMultiplier;
         Coin_Sound.Play();
-        Debug.Log("Score: " + score);
+        //Debug.Log("Score: " + score);
 
         if (ball != null && ball.skin != null)
         {
